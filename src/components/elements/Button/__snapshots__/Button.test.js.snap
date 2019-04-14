@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Element] Button deve conseguir renderizar [snapshot] 1`] = `
+.c0 {
+  border-radius: 5px;
+}
+
+<button
+  class="c0"
+>
+  Clique aqui!
+</button>
+`;

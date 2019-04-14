@@ -59,3 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+# Package locks
+package-lock.json
+yarn.lock
+
+# distribution package
+dist
+
+# test results
+.jest-test-results.json
