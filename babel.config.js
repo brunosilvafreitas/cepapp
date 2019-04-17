@@ -14,7 +14,9 @@ const plugins = [
     fileName: false,
     minify: true,
     pure: true
-  }]
+  }],
+  '@babel/plugin-proposal-export-default-from',
+  '@babel/plugin-proposal-export-namespace-from'
 ]
 
 module.exports = { presets, plugins }

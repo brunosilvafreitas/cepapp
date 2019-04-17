@@ -1,8 +1,7 @@
 import express from 'express'
+import address from './api/address'
 const router = express.Router()
 
-// TODO Rotas
-router.route('/')
-  .get((req, res) => res.send('CEP APP'))
+router.use('/api/address/:postalCode', address.getByPostalCode)
 
 export default router
