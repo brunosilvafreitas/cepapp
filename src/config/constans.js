@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   HERE_MAPS: {
     GEOCODER_URI: 'https://geocoder.cit.api.here.com/6.2/geocode.json',
     APP_ID: 'aU0ta4JLw98rZM19LPxB',

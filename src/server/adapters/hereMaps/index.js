@@ -1,7 +1,7 @@
-import fetch from 'node-fetch'
-import { HERE_MAPS } from '../../../../config/constans'
+import fetch from 'isomorphic-fetch'
+import constans from '../../../config/constans'
 
-const { APP_CODE, APP_ID, GEOCODER_URI } = HERE_MAPS
+const { HERE_MAPS: { APP_CODE, APP_ID, GEOCODER_URI } } = constans
 
 const getCoordinates = async (postalCode) => {
   console.log(`[Adapter][HereMaps] GetCoordinates by postal code ${postalCode}`)

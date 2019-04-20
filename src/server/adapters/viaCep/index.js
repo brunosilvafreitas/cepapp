@@ -1,8 +1,8 @@
-import fetch from 'node-fetch'
-import { VIA_CEP } from '../../../../config/constans'
+import fetch from 'isomorphic-fetch'
+import constans from '../../../config/constans'
 import { runInNewContext } from 'vm'
 
-const { WS_URI } = VIA_CEP
+const { VIA_CEP: { WS_URI } } = constans
 
 const getAddress = async (postalCode) => {
   console.log(`[Adapter][ViaCep] GetAddress by postal code ${postalCode}`)
