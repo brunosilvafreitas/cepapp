@@ -15,7 +15,7 @@ Executando o Storybook:
 yarn storybook
 ```
 
-## Ambiente de desenvolvimento
+## Ambiente de desenvolvimento (Node.js)
 
 Instale as dependencias:
 ```
@@ -26,6 +26,25 @@ Executando o projeto:
 ```
 yarn dev
 ```
+
+## Rodando local com Docker (docker-compose)
+
+Com o Docker e o Compose instalados em sua máquina execute apenas:
+```
+yarn dc:up
+```
+
+Para ver os logs:
+```
+yarn dc:tail
+```
+
+Para parar o servidor:
+```
+yarn dc:down
+```
+
+\* veja atalhos no arquivo package.json
 
 ## Ambiente de produção
 
@@ -43,3 +62,8 @@ Executando o projeto:
 ```
 yarn start
 ```
+
+## TO DO
+- Testes funcionais dos elementos
+- Teste E2E
+- Dependencias externas com React Helmet

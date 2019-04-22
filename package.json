@@ -13,7 +13,13 @@
     "build:client:watch": "webpack --watch",
     "dev": "concurrently -k \"yarn run build:server:watch\" \"yarn run build:client:watch\" \"yarn run start:watch\"",
     "test": "jest ./src",
-    "storybook": "start-storybook -p 3001"
+    "storybook": "start-storybook -p 3001",
+    "dc:up": "docker-compose up -d",
+    "dc:down": "docker-compose down",
+    "dc:restart": "docker-compose down && docker-compose up -d",
+    "dc:ps": "docker-compose ps",
+    "dc:logs": "docker-compose logs",
+    "dc:tail": "docker-compose logs -f --tail=10"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",

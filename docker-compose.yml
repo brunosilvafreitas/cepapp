@@ -1,0 +1,11 @@
+version: "3"
+services:
+  cepapp:
+    image: node:10.15.1-alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    command: >
+      sh -c "cd /usr/app && yarn && yarn build && yarn start"
