@@ -12,7 +12,7 @@ const getByPostalCode = async (postalCode) => {
 
   const response = {
     ...address,
-    coordinates
+    ...coordinates
   }
 
   console.log(`[Address][Resolver] Return ${JSON.stringify(response)}`)

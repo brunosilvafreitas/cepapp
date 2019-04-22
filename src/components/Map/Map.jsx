@@ -1,6 +1,5 @@
 /* global H */
 import React, { useEffect, useState } from 'react'
-import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import shortid from 'shortid'
 import Box from '../Box'
@@ -9,7 +8,7 @@ const MapContainer = styled(Box)`
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%;
+  padding-bottom: 50%;
   box-sizing: border-box;
 `
 
@@ -43,22 +42,24 @@ const Map = ({ appId, appCode, lat, lng, zoom = 15.5, ...other }) => {
           center: { lng, lat }
         })
 
+      const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(newMap))
+
+      const newMarker = new H.map.Marker({ lng, lat })
+      newMap.addObject(newMarker)
+
       const ui = H.ui.UI.createDefault(newMap, defaultLayers, 'pt-BR')
       ui.removeControl('mapsettings')
       setMap(newMap)
     } else {
+      map.removeObjects(map.getObjects())
       map.setCenter({ lng, lat })
+      const newMarker = new H.map.Marker({ lng, lat })
+      map.addObject(newMarker)
     }
   })
 
   return (
     <MapContainer {...other}>
-      <Helmet>
-        <script src='http://js.api.here.com/v3/3.0/mapsjs-core.js' type='text/javascript' charset='utf-8' />
-        <script src='http://js.api.here.com/v3/3.0/mapsjs-service.js' type='text/javascript' charset='utf-8' />
-        <script src='http://js.api.here.com/v3/3.0/mapsjs-ui.js' type='text/javascript' charset='utf-8' />
-        <link rel='stylesheet' type='text/css' href='http://js.api.here.com/v3/3.0/mapsjs-ui.css' />
-      </Helmet>
       <MapWrapper id={id} />
     </MapContainer>
   )

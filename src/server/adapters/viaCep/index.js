@@ -21,7 +21,7 @@ const getAddress = async (postalCode) => {
   const data = runInNewContext(jsonp, ctx)
 
   const parsedData = {
-    postal_code: data.cep,
+    postalCode: data.cep,
     street: data.logradouro,
     neighborhood: data.bairro,
     city: data.localidade,

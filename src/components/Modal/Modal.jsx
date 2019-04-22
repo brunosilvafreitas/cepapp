@@ -38,8 +38,16 @@ const Close = styled(CloseIcon)`
 const Modal = ({ title, open = false, onClose, children, ...other }) => {
   const [isOpen, setOpen] = useState(open)
 
+  const handleTransitionEnd = () => {
+    onClose()
+  }
+
   useEffect(() => {
     setOpen(open)
+
+    if (open && onClose) {
+      document.querySelector('.modal-open').addEventListener('transitionend', handleTransitionEnd)
+    }
 
     return function cleanup () {
       setOpen(false)
@@ -49,7 +57,7 @@ const Modal = ({ title, open = false, onClose, children, ...other }) => {
   return (
     <ModalContainer {...other}>
       <ModalSlider className={isOpen && 'modal-open'}>
-        <Close onClick={() => onClose ? onClose() : setOpen(false)} />
+        <Close onClick={() => setOpen(false)} />
         <ModalHeader>
           {title}
         </ModalHeader>

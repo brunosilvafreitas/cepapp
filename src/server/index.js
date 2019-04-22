@@ -1,3 +1,4 @@
+import path from 'path'
 import cluster from 'cluster'
 import express from 'express'
 import bodyParser from 'body-parser'
@@ -14,6 +15,7 @@ if (cluster.isMaster) {
   }
 } else {
   app.use(bodyParser.json())
+  app.use('/public', express.static(path.join(process.cwd(), 'public')))
   app.use(router)
   app.listen(PORT)
   console.log('Cep App running on port', PORT)

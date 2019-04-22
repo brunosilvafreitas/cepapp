@@ -7,6 +7,7 @@ import Box from '../../../components/Box'
 const Container = styled(Box)`
   background-color: #ddd;
   padding: 20px 25px 25px;
+  margin-bottom: 10px;
 `
 
 const Title = styled.h1`
@@ -30,7 +31,7 @@ const PostalCodeSearch = ({
   postalCode = '',
   ...other
 }) => {
-  const [term, setTerm] = useState('')
+  const [term, setTerm] = useState(postalCode)
   const handleSubmit = (e) => {
     e.preventDefault()
 

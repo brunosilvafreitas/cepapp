@@ -1,1 +1,1 @@
-export { default } from 'PostalCodeSearch'
+export { default } from './PostalCodeSearch'
