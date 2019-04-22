@@ -31,7 +31,7 @@ const PostalCodeSearch = ({
   postalCode = '',
   ...other
 }) => {
-  const [term, setTerm] = useState(postalCode)
+  const [term, setTerm] = useState(postalCode || '')
   const handleSubmit = (e) => {
     e.preventDefault()
 

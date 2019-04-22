@@ -5,11 +5,7 @@ import PostalCodeView from '../Views/PostalCode'
 
 const routes = [
   {
-    path: '/cep/:code',
-    component: PostalCodeView
-  },
-  {
-    path: '/cep/',
+    path: '/cep/:code?',
     component: PostalCodeView
   }
 ]

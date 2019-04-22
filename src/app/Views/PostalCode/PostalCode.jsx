@@ -53,7 +53,8 @@ const PostalCode = ({ history, match }) => {
     }
 
     if (postalCode && (!map || (map.postalCode && postalCode !== map.postalCode))) {
-      history.replace(match.path.replace(':code', postalCode))
+      const pathWithParam = match.path.replace(':code?', postalCode)
+      history.replace(pathWithParam)
       fetchAddress(postalCode)
     }
   }, [postalCode])
