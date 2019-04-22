@@ -66,6 +66,7 @@ yarn.lock
 
 # distribution package
 dist
+public
 
 # test results
 .jest-test-results.json
